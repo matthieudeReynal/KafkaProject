@@ -6,7 +6,10 @@ I tried here to handle Kafka, for this I used Coinbase API to get bitcoin candle
 
 First run: sudo docker compose-up d
 
-Then create needed topics: kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic candles2 kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic trendSample kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic smaSample
+Then create needed topics: 
+kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic candles2 
+kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic trendSample 
+kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic smaSample
 
 candles2 will contain raw data from API, we fill it by runnning: python3 getCandles.py (it's the producer)
 
